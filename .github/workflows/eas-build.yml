@@ -50,6 +50,7 @@ jobs:
         SUPABASE_API_KEY: ${{ secrets.SUPABASE_API_KEY }}
       run: |
         echo "n" | eas build --platform android --profile preview
+      continue-on-error: false
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
