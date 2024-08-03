@@ -48,9 +48,7 @@ jobs:
         EXPO_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.EXPO_PUBLIC_SUPABASE_ANON_KEY }}
         SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
         SUPABASE_API_KEY: ${{ secrets.SUPABASE_API_KEY }}
-      run: |
-        echo "n" | eas build --platform android --profile preview
-      continue-on-error: false
+      run: eas build --platform android --profile preview --non-interactive --no-wait
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
